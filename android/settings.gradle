@@ -1,0 +1,3 @@
+rootProject.name = 'failed'
+
+include ':app'
