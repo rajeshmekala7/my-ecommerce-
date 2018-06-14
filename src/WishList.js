@@ -35,7 +35,7 @@ const styles={
     headerStyle:{
         justifyContent:'center',
         alignItems:"center",
-        backgroundColor: '#0b09ff',
+        backgroundColor: '#047BD5',
         
     },
     headerText:{

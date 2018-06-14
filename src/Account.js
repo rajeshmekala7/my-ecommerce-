@@ -74,7 +74,7 @@ const styles={
     headerStyle:{
         justifyContent:'center',
         alignItems:"center",
-        backgroundColor: '#0b09ff',
+        backgroundColor: '#047BD5',
         // marginTop: 10,
         // marginBottom: 10,
        // borderBottomWidth: 2

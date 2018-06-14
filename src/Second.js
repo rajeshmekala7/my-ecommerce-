@@ -26,13 +26,11 @@ const styles={
     headerStyle:{
         justifyContent:'center',
         alignItems:"center",
-        backgroundColor: '#CAF3DF',
-        marginTop: 10,
-        marginBottom: 10,
-        borderBottomWidth: 2
+        backgroundColor: '#047BD5',
+       
     },
     headerText:{
         fontSize: 30,
-        color: '#13EC7F'
+        color: '#ddd'
     }
 }

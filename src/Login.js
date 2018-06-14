@@ -6,29 +6,43 @@
         TouchableOpacity,
         TextInput
         } from 'react-native';
-import RootTabs from '../Router';
+
 import { Linking} from 'react-native';
 import { StackNavigator} from 'react-navigation';
+import firebase from 'firebase';
+import RootTabs from '../Router';
  //creating a component
 
  export default class Login extends Component{
-   
-state = {
-    email: '',
-    password: ''
- }
+    
+    state = {
+        email: 'r',
+        password: 'r'
+       }
+    login(){
+        if(this.state.email=="r" && this.state.password=="r")
+        {
+           this.props.navigation.navigate('RootTabs');
+        }
+        else
+        {
+            alert('you have entered incorrect mail id or password')
+        }
+    }
+//     componentDidMount()
+//     { 
+//         firebase.initializeApp({
+//             apiKey: 'AIzaSyCyazuyomLN9quNKqe45xtxIj7PnfzU9xQ',
+//            authDomain: 'auth-2ec42.firebaseapp.com',
+//            databaseURL: 'https://auth-2ec42.firebaseio.com',
+//            projectId: 'auth-2ec42',
+//            storageBucket: 'auth-2ec42.appspot.com',
+//           messagingSenderId: '993816034861'
+//         });
+//    }
+  
 
- login(){
-     if(this.state.email=="r" && this.state.password=="r")
-     {
-        this.props.navigation.navigate('RootTabs');
-     }
-     else
-     {
-         alert('you have entered incorrect mailid or password')
-     }
- }
-     render(){
+  render(){
          return(
          <View style={styles.bodyStyle}>
              <View>
@@ -37,12 +51,14 @@ state = {
            <View >
                <TextInput style={styles.input}
                placeholder='Email'
-               placeholderTextColor='blue'
+               placeholderTextColor='#047BD5'
+               value={this.state.email}
                 onChangeText={(email) => this.setState({ email:email })}
                 />
                 <TextInput style={styles.input}
                placeholder='Password'
-               placeholderTextColor='blue'
+               placeholderTextColor='#047BD5'
+               secureTextEntry
                value={this.state.password} onChangeText={(password) => this.setState({ password:password })}
                 />
                 
@@ -68,31 +84,34 @@ state = {
  }
  const styles={
      headerText:{
-             fontSize:30,
-             color:'blue',
+             fontSize:26,
+             color:'#047BD5',
              alignSelf:'center'
      },
      bodyStyle:{
         paddingTop:30,
+        marginTop:80
      },
      input:{
          margin:15,
-         fontSize:15,
-         borderColor:'#0826F9',
-         borderWidth:1,
+         fontSize:16,
+         borderColor:'grey',
+         borderBottomWidth:1,
          height: 40
         },
         buttonText:{
-            fontSize:20,
-            color: 'blue',
+            fontSize:16,
+            color: '#fff',
         },
         buttonView:{
             paddingTop:5,
             margin:15,
             paddingBottom:5,
-            borderColor:'#0826F9',
+            borderColor:'#047BD5',
             borderWidth:1,
+            backgroundColor:'#047BD5',
             justifyContent:'center',
             alignItems:"center",
+            height:40
         }
  }
